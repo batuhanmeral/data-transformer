@@ -1,0 +1,14 @@
+.docs/
+
+/node_modules/
+/.next/
+/out/
+/test-results/
+/playwright-report/
+/next-env.d.ts
+*.tsbuildinfo
+
+# Local environment files; only examples are tracked
+.env
+.env.*
+!.env.example

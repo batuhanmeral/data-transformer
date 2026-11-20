@@ -1,0 +1,84 @@
+{
+  "name": "unravel",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@10.34.9",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "cross-env NEXT_TELEMETRY_DISABLED=1 next dev",
+    "build": "cross-env NEXT_TELEMETRY_DISABLED=1 next build && tsx scripts/gen-csp.ts && tsx scripts/gen-licenses.ts",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "csp:check": "tsx scripts/gen-csp.ts --check",
+    "csp:verify": "tsx scripts/verify-csp-determinism.ts",
+    "predev": "tsx scripts/gen-operations.ts",
+    "prebuild": "tsx scripts/gen-operations.ts",
+    "pretest": "tsx scripts/gen-operations.ts",
+    "pretypecheck": "tsx scripts/gen-operations.ts"
+  },
+  "dependencies": {
+    "@codemirror/commands": "6.11.1",
+    "@codemirror/language": "6.13.1",
+    "@codemirror/state": "6.7.6",
+    "@codemirror/view": "6.43.15",
+    "@dnd-kit/core": "6.3.1",
+    "@dnd-kit/sortable": "10.0.0",
+    "@dnd-kit/utilities": "3.2.2",
+    "@fontsource-variable/inter": "5.3.0",
+    "@fontsource-variable/jetbrains-mono": "5.3.0",
+    "@noble/ciphers": "2.4.0",
+    "@noble/hashes": "2.4.0",
+    "class-variance-authority": "0.7.1",
+    "cmdk": "1.1.1",
+    "cn": "0.5.2",
+    "fflate": "0.8.3",
+    "lucide-react": "1.75.0",
+    "next": "16.4.6",
+    "next-themes": "0.4.6",
+    "radix-ui": "1.8.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-resizable-panels": "4.24.1",
+    "sonner": "2.0.8",
+    "zod": "4.6.7",
+    "zustand": "5.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "@tailwindcss/postcss": "4.3.5",
+    "@testing-library/dom": "10.4.2",
+    "@testing-library/react": "16.3.3",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "cross-env": "10.1.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.6",
+    "fake-indexeddb": "6.2.8",
+    "jsdom": "28.1.0",
+    "parse5": "8.1.1",
+    "shadcn": "4.23.0",
+    "tailwindcss": "4.3.5",
+    "tsx": "4.23.15",
+    "tw-animate-css": "1.4.0",
+    "typescript": "6.0.3",
+    "vitest": "5.1.1"
+  },
+  "type": "module",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ],
+    "ignoredBuiltDependencies": [
+      "sharp"
+    ],
+    "overrides": {
+      "@ts-morph/common@0.27.0>minimatch": "11.0.9"
+    }
+  }
+}
