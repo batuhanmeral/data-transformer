@@ -22,3 +22,7 @@ updates:
     groups:
       npm-minor-patch:
         update-types: [minor, patch]
+    ignore:
+      # Majors need code changes; take them by hand. Security updates still open PRs.
+      - dependency-name: "*"
+        update-types: [version-update:semver-major]
