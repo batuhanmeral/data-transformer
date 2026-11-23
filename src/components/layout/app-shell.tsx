@@ -132,7 +132,7 @@ export function AppShell() {
           <Layers aria-hidden="true" />
         </Button>
       </SheetTrigger>
-      <CommandPalette />
+      <CommandPalette triggerVariant="outline" />
     </>
   );
   const recipePanel = (

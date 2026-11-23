@@ -67,7 +67,7 @@ export function OperationList({ draggable = false, onAdd }: { draggable?: boolea
                 )}
               >
                 <h3>
-                  <Collapsible.Trigger className="group mb-1 flex w-full items-center gap-1.5 rounded px-1 py-1.5 text-left text-xs font-semibold tracking-wide text-muted-foreground uppercase hover:text-foreground focus-visible:outline focus-visible:outline-ring">
+                  <Collapsible.Trigger className="group mb-1 flex w-full items-center gap-1.5 rounded px-1 py-1.5 text-left text-xs font-semibold tracking-wide text-(--category-heading) uppercase hover:text-foreground focus-visible:outline focus-visible:outline-ring">
                     <ChevronRight aria-hidden="true" className="size-3 group-data-[state=open]:rotate-90" />
                     {title}
                   </Collapsible.Trigger>

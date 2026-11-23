@@ -14,6 +14,9 @@ import { useRecipeStore } from "@/stores/recipe";
 import { useUiStore } from "@/stores/ui";
 import { StepCard } from "./step-card";
 
+// One step below the "sm" button so Bake does not dominate the panel header.
+const bakeButtonClass = "h-7 min-w-16 gap-1 px-2 text-sm has-[>svg]:px-2 [&_svg:not([class*='size-'])]:size-3.5";
+
 export function RecipePanel({ onBake, onCancel, headerActions }: {
   onBake(): void;
   onCancel?(): void;
@@ -59,11 +62,11 @@ export function RecipePanel({ onBake, onCancel, headerActions }: {
             <Switch aria-label="Auto-bake" checked={autoBake} onCheckedChange={(value) => useUiStore.setState({ autoBake: value })} />
           </label>
           {onCancel ? (
-            <Button size="sm" variant="outline" aria-label="Cancel bake" onClick={onCancel} className="min-w-18">
+            <Button size="sm" variant="outline" aria-label="Cancel bake" onClick={onCancel} className={bakeButtonClass}>
               <X aria-hidden="true" /> Cancel
             </Button>
           ) : (
-            <Button size="sm" aria-label="Bake" onClick={onBake} className="min-w-18">
+            <Button size="sm" aria-label="Bake" onClick={onBake} className={cn(bakeButtonClass, "text-white dark:text-primary-foreground")}>
               <Play aria-hidden="true" />
               {running ? "Baking…" : "Bake"}
             </Button>

@@ -4,7 +4,19 @@ import { useDraggable } from "@dnd-kit/core";
 import { GripVertical, Star } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import type { OperationMeta } from "@/core/registry";
+import type { Category } from "@/core/types";
 import { cn } from "@/lib/utils";
+
+// Literal class names so Tailwind can see them; colors live in globals.css.
+const categoryDotClass: Record<Category, string> = {
+  encoding: "bg-(--category-encoding)",
+  text: "bg-(--category-text)",
+  hash: "bg-(--category-hash)",
+  crypto: "bg-(--category-crypto)",
+  compression: "bg-(--category-compression)",
+  data: "bg-(--category-data)",
+  extract: "bg-(--category-extract)",
+};
 
 export function OperationItem({ operation, favorite, draggable, onAdd, onFavorite }: {
   operation: OperationMeta;
@@ -13,7 +25,7 @@ export function OperationItem({ operation, favorite, draggable, onAdd, onFavorit
   onAdd(): void;
   onFavorite(): void;
 }) {
-  const { id, name, description } = operation;
+  const { id, name, description, category } = operation;
   const { setNodeRef, setActivatorNodeRef, attributes, listeners, isDragging } = useDraggable({
     id: `operation:${id}`,
     data: { type: "operation", opId: id },
@@ -34,7 +46,7 @@ export function OperationItem({ operation, favorite, draggable, onAdd, onFavorit
             onClick={onAdd}
             className="flex min-w-0 flex-1 items-center gap-2 rounded px-2 py-1.5 text-left text-base font-normal hover:text-primary-text focus-visible:outline focus-visible:outline-ring"
           >
-            <span aria-hidden="true" className="size-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
+            <span aria-hidden="true" className={cn("size-1.5 shrink-0 rounded-full", categoryDotClass[category])} />
             <span className="truncate">{name}</span>
           </button>
         </TooltipTrigger>

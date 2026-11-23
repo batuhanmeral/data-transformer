@@ -84,6 +84,15 @@
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
+  /* Category headings and markers in the operation list. */
+  --category-heading: #b5532f;
+  --category-encoding: oklch(0.7 0.085 245);
+  --category-text: oklch(0.7 0.085 290);
+  --category-hash: oklch(0.7 0.085 195);
+  --category-crypto: oklch(0.7 0.085 20);
+  --category-compression: oklch(0.7 0.085 85);
+  --category-data: oklch(0.7 0.085 145);
+  --category-extract: oklch(0.7 0.085 330);
   --sidebar-ring: var(--ring);
 }
 
@@ -117,6 +126,14 @@
   --sidebar-accent: var(--accent);
   --sidebar-accent-foreground: var(--accent-foreground);
   --sidebar-border: oklch(1 0 0 / 10%);
+  --category-heading: #e38e70;
+  --category-encoding: oklch(0.8 0.07 245);
+  --category-text: oklch(0.8 0.07 290);
+  --category-hash: oklch(0.8 0.07 195);
+  --category-crypto: oklch(0.8 0.07 20);
+  --category-compression: oklch(0.8 0.07 85);
+  --category-data: oklch(0.8 0.07 145);
+  --category-extract: oklch(0.8 0.07 330);
   --sidebar-ring: var(--ring);
 }
 

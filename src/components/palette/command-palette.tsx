@@ -20,7 +20,7 @@ const themeCommands = [
   { theme: "system", label: "Use system theme", icon: SunMoon },
 ] as const;
 
-export function CommandPalette() {
+export function CommandPalette({ triggerVariant = "ghost" }: { triggerVariant?: "ghost" | "outline" }) {
   const [open, setOpen] = useState(false);
   const [activeDialog, setActiveDialog] = useState<"share" | "import">();
   const { setTheme } = useTheme();
@@ -49,7 +49,7 @@ export function CommandPalette() {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button
-          variant="outline"
+          variant={triggerVariant}
           size="icon-sm"
           aria-label="Open command palette"
           title="Commands (Ctrl/⌘ K)"
