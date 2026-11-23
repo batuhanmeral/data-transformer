@@ -20,7 +20,7 @@ const persistedSchema = z.object({
 export const useUiStore = create<UiState>()(persist(
   (): UiState => ({ autoBake: true, panelSizes: [20, 30, 50], mobileTab: "input" }),
   {
-    name: "unravel:ui:v1",
+    name: "data-workbench:ui:v1",
     storage: createJSONStorage(() => localStorageSafe),
     merge: (persisted, current) => {
       const result = persistedSchema.safeParse(persisted);

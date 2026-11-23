@@ -2,7 +2,7 @@ const storeName = "data";
 
 function openDatabase(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open("unravel", 1);
+    const request = indexedDB.open("data-workbench", 1);
     let blocked = false;
 
     request.onupgradeneeded = () => request.result.createObjectStore(storeName);

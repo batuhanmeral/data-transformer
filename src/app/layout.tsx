@@ -38,7 +38,7 @@ const jetBrainsMonoExtended = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Unravel",
+  title: "Data Workbench",
   description: "Transform data locally in your browser.",
 };
 

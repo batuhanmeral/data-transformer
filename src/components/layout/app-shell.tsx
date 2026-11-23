@@ -66,7 +66,8 @@ function DesktopPanels({ recipePanel }: { recipePanel: ReactNode }) {
     >
       <ResizablePanel id="operations" minSize="15%">
         <WorkspacePanel
-          title="Operations"
+          title="Data Workbench"
+          label="Operations"
           icon={Layers}
           tools={
             <>
@@ -172,7 +173,7 @@ export function AppShell() {
     >
       <Sheet open={operationsOpen} onOpenChange={setOperationsOpen}>
         <main aria-label="Data workspace" className="h-dvh overflow-hidden">
-          <h1 className="sr-only">Unravel</h1>
+          <h1 className="sr-only">Data Workbench</h1>
           {viewport === "desktop" && <DesktopPanels recipePanel={recipePanel} />}
           {viewport === "tablet" && (
             <div className="grid h-full grid-cols-[2fr_3fr] divide-x divide-border">

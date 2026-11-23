@@ -103,7 +103,7 @@ export function renderNotices(packages: PackageNotice[]): string {
   });
 
   return [
-    "Unravel third-party notices",
+    "Data Workbench third-party notices",
     "",
     "This site includes the following third-party packages. Each package is",
     "listed with the license and notice files it is distributed with.",

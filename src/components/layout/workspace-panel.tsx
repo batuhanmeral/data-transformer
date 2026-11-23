@@ -1,8 +1,10 @@
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
-export function WorkspacePanel({ title, icon: Icon, detail, detailLabel, tools, headerActions, children }: {
+export function WorkspacePanel({ title, label = title, icon: Icon, detail, detailLabel, tools, headerActions, children }: {
   title: string;
+  /** Accessible name of the region when it should differ from the visible title. */
+  label?: string;
   icon: LucideIcon;
   detail?: string;
   detailLabel?: string;
@@ -11,7 +13,7 @@ export function WorkspacePanel({ title, icon: Icon, detail, detailLabel, tools, 
   children: ReactNode;
 }) {
   return (
-    <section aria-label={title} className="flex h-full min-h-0 flex-col">
+    <section aria-label={label} className="flex h-full min-h-0 flex-col">
       <header className="shrink-0 border-b border-border bg-card/60">
         <div className="flex min-h-[39px] flex-wrap items-center gap-x-2 gap-y-1 px-3.5 py-1">
           <div className="flex items-center gap-2">

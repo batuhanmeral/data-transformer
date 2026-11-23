@@ -33,8 +33,8 @@ it("add uses defaultArgs", () => {
 });
 
 it("ignores corrupt persisted state", async () => {
-  localStorage.setItem("unravel:recipes:v1", "{broken");
-  localStorage.setItem("unravel:ui:v1", JSON.stringify({ state: { autoBake: "false", mobileTab: "unknown" } }));
+  localStorage.setItem("data-workbench:recipes:v1", "{broken");
+  localStorage.setItem("data-workbench:ui:v1", JSON.stringify({ state: { autoBake: "false", mobileTab: "unknown" } }));
   await useRecipeStore.persist.rehydrate();
   await useUiStore.persist.rehydrate();
   expect(useRecipeStore.getState()).toMatchObject({ steps: [], saved: [], favorites: [] });
@@ -46,7 +46,7 @@ it("persists saved recipes and favorites without persisting working steps", asyn
   add("to-base64");
   save("Encode");
   toggleFavorite("to-base64");
-  const stored = JSON.parse(localStorage.getItem("unravel:recipes:v1") ?? "{}");
+  const stored = JSON.parse(localStorage.getItem("data-workbench:recipes:v1") ?? "{}");
   expect(stored.state).toEqual({
     saved: [{ name: "Encode", recipe: useRecipeStore.getState().steps, savedAt: expect.any(Number) }],
     favorites: ["to-base64"],

@@ -9,7 +9,7 @@ Only the latest commit on `main` (and the live site built from it) receives fixe
 Please do not open a public issue for security problems.
 
 Report privately through GitHub:
-[Security → Report a vulnerability](https://github.com/batuhanmeral/data-transformer/security/advisories/new).
+[Security → Report a vulnerability](https://github.com/batuhanmeral/data-workbench/security/advisories/new).
 
 Include the affected URL or commit, the recipe and input that reproduce the problem
 (a share link is fine if it holds no real data), and what you expected to happen.
@@ -20,8 +20,8 @@ and credited in the advisory unless you prefer otherwise.
 
 ## Scope
 
-Unravel is a static site: recipes, inputs and outputs are processed in the browser and
-there is no backend. In scope:
+Data Workbench is a static site: recipes, inputs and outputs are processed in the
+browser and there is no backend. In scope:
 
 - XSS or script execution through rendered output, including the HTML preview, shared
   recipe links and imported CyberChef recipes.

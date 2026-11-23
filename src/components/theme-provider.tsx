@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 
 export function ThemeProvider({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <NextThemesProvider attribute="class" defaultTheme="dark" enableSystem storageKey="unravel:theme">
+    <NextThemesProvider attribute="class" defaultTheme="dark" enableSystem storageKey="data-workbench:theme">
       {children}
     </NextThemesProvider>
   );

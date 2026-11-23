@@ -3,7 +3,9 @@ import { expect, test } from "@playwright/test";
 test("renders three panels on desktop", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/");
-  await expect(page.getByRole("region", { name: "Operations", exact: true })).toBeVisible();
+  const operations = page.getByRole("region", { name: "Operations", exact: true });
+  await expect(operations).toBeVisible();
+  await expect(operations.getByRole("heading", { level: 2 })).toHaveText("Data Workbench");
   await expect(page.getByRole("region", { name: "Recipe", exact: true })).toBeVisible();
   await expect(page.getByRole("region", { name: "Input", exact: true })).toBeVisible();
   await expect(page.getByRole("region", { name: "Output", exact: true })).toBeVisible();
@@ -63,7 +65,7 @@ for (const { name, width, height } of [
 
     await expectPlacement(page.getByRole("banner")).toHaveCount(0);
     await expectPlacement(page.getByRole("contentinfo", { name: "Workspace status" })).toHaveCount(0);
-    await expectPlacement(page.getByRole("heading", { level: 1, name: "Unravel" })).toHaveClass(/sr-only/);
+    await expectPlacement(page.getByRole("heading", { level: 1, name: "Data Workbench" })).toHaveClass(/sr-only/);
 
     if (name === "mobile") {
       const tablist = workspace.getByRole("tablist", { name: "Workspace panels" });

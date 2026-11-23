@@ -73,7 +73,7 @@ export const useRecipeStore = create<RecipeState>()(persist(
     })),
   }),
   {
-    name: "unravel:recipes:v1",
+    name: "data-workbench:recipes:v1",
     storage: createJSONStorage(() => localStorageSafe),
     partialize: ({ saved, favorites }) => ({ saved, favorites }),
     merge: (persisted, current) => {
