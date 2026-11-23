@@ -1,8 +1,7 @@
-# Contributing to Unravel
+# Contributing to Data Workbench
 
-See the [README](README.md) for setup and development commands. Design and
-implementation notes live in the local [.docs directory](.docs/) and are written
-in Turkish. Use Conventional Commits for commit messages.
+See the [README](README.md) for setup and development commands. Use
+Conventional Commits for commit messages.
 
 ## Add an operation
 
