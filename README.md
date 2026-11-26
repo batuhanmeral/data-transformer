@@ -4,6 +4,8 @@ Data Workbench is a browser-based data transformer. Build a recipe of
 operations, drop in text or a file, and see each step's output. All processing
 runs locally in your browser; nothing is uploaded.
 
+View the live application [here](https://data-workbench-batuhanmeral.vercel.app/).
+
 ## Features
 
 - 62 operations: encoding, text, hash, crypto, compression, data (JSON, JWT,
